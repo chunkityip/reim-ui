@@ -1,0 +1,48 @@
+<div class="container">
+    <h3>Add Reimbursement Component</h3>
+
+    <div>
+        <button type="button" class="btn btn-success" (click)="toggleAddForm()">Add a case</button>
+        <div class="card m-5" *ngIf="toggleAdd">
+            <div class="card-header bg-success text-white">Add a case</div>
+            <div class="card-body">
+                <form>
+                    <!-- <div class="mb-3 mt-3">
+                        <label for="reimbursementsID" class="form-label">Reimbursements ID:</label>
+                        <input type="text" class="form-control" id="reimbursementID" placeholder="Enter ReimbursementID"
+                            name="reimbursementsID" [(ngModel)]="newCase.userId">
+                    </div> -->
+                    <div class="mb-3 mt-3">
+                        <label for="reimbursementsAmount" class="form-label"> Amount :</label>
+                        <input type="text" class="form-control" id="reimbursementsAmount"
+                            placeholder="Enter an Reimbursements Amount: " name="reimbursementsAmount"
+                            [(ngModel)]="newCase.reimbursementsAmount">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="reimbursementDescription" class="form-label"> Description:</label>
+                        <input type="text" class="form-control" id="reimbursementDescription"
+                            placeholder="Add a Description :" name="reimbursementDescription"
+                            [(ngModel)]="newCase.reimbursementsDescription">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="reimbursementsApplicantID" class="form-label"> Applicant ID:</label>
+                        <input type="text" class="form-control" id="reimbursementsApplicantID"
+                            placeholder="Enter applicant ID: " name="reimbursementsApplicantID"
+                            [(ngModel)]="newCase.reimbursementsApplicantID">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="reimbursementsStatusID" class="form-label">Status ID:</label>
+                        <input type="text" class="form-control" id="reimbursementsStatusID"
+                            placeholder="Enter Status ID" name="reimbursementsStatusID"
+                            [(ngModel)]="newCase.reimbursementsStatusID">
+                    </div>
+                    <div class="card-footer bg-success">
+                        <button type="button" class="btn btn-light" (click)="addCase()">
+                            ADD
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>

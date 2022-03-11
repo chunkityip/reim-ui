@@ -1,0 +1,38 @@
+<div class="container">
+    <h3>Update Information</h3>
+
+    <div>
+        <button type="button" class="btn btn-success" (click)="toggleAddForm()">Update</button>
+        <div class="card m-5" *ngIf="toggleAdd">
+            <div class="card-header bg-success text-white">Update</div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="reimbursementsID" class="form-label">User id (for satecfy):</label>
+                        <input type="text" class="form-control" id="reimbursementID" placeholder="Enter User id"
+                            name="reimbursementsID" [(ngModel)]="editInfo.userID">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="reimbursementDescription" class="form-label"> Email:</label>
+                        <input type="text" class="form-control" id="reimbursementDescription"
+                            placeholder="Email :" name="reimbursementDescription"
+                            [(ngModel)]="editInfo.email">
+                    </div> 
+                    
+                    <!-- <div class="mb-3 mt-3">
+                        <label for="reimbursementsStatusID" class="form-label">Status ID:</label>
+                        <input type="text" class="form-control" id="reimbursementsStatusID"
+                            placeholder="Enter Status ID" name="reimbursementsStatusID"
+                            [(ngModel)]="newCase.reimbursementsStatusID">
+                    </div> -->
+                    <div class="card-footer bg-success">
+                        <button type="button" class="btn btn-light" (click)="updateEmployeeInfo()">
+                            Edit
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

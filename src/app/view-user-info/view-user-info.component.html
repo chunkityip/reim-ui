@@ -1,0 +1,28 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">UsersId</th>
+                <th scope="col">UsersName</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Email</th>
+
+            </tr>
+            <!-- users_id | users_name | password | first_name | last_name |     email     | users_role_id -->
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of anEmployee">
+                <td>{{user.userID}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td><button type="button" class="btn btn-link" (click)="showRequests(user.userID)">View
+                        Requests</button></td>
+
+                    </tr>
+                    <!-- 1 | a          | 1111     | a          | b         | abu@gmail.com |             1 -->
+                </tbody>
+            </table>
+        </div>

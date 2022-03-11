@@ -1,0 +1,37 @@
+<div class="container">
+    <h3>View Reimbursments</h3>
+
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Reimbursement ID</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Submit Time</th>
+                        <th scope="col">Resolved Time</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Applicant ID</th>
+                        <th scope="col">Status ID</th>
+                        <th scope="col" *ngIf="isManager">Actions</th>
+                    </tr>
+                    <!-- users_id | users_name | password | first_name | last_name |     email     | users_role_id -->
+                </thead>
+                <tbody>
+                    <tr *ngFor="let r of reimbursements">
+                        <td>{{r.reimbursementsID}}</td>
+                        <td>{{r.reimbursementsAmount}}</td>
+                        <td>{{r.reimbursementsSubmitTime}}</td>
+                        <td>{{r.reimbursementsResolvedTime}}</td>
+                        <td>{{r.reimbursementsDescription}}</td>
+                        <td>{{r.reimbursementsApplicantID}}</td>
+                        <td>{{r.reimbursementsStatusID == 2 ? 'Pending' : r.reimbursementsStatusID == 3 ? 'Approved' : r.reimbursementsStatusID == 4 ? 'Denied' : 'Submitted'}}</td>
+                        <td *ngIf="isManager">
+                            <button type="button" *ngIf="r.reimbursementsStatusID == 2" (click)="approve(r.reimbursementsID)" class="btn btn-link">Approve</button>
+                            <button type="button" *ngIf="r.reimbursementsStatusID == 2" (click)="deny(r.reimbursementsID)" class="btn btn-link">Deny</button>
+                        </td>
+                    </tr>
+                    <!-- 1 | a          | 1111     | a          | b         | abu@gmail.com |             1 -->
+                </tbody>
+            </table>
+        </div>
